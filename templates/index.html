@@ -1,0 +1,857 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>GREENHOUSE</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon" />
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet" />
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}
+   " rel="stylesheet" />
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet" />
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet" />
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css'%}" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center fixed-top topbar-transparent">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start">
+      <i class="bi bi-phone d-flex align-items-center"><span>+265 999 02 22 22 / +265 882 76 17 79</span></i>
+      <i class="bi bi-clock ms-4 d-none d-lg-flex align-items-center"><span>Mon-Sat: 11:00 AM - 17:00 PM</span></i>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <div class="logo me-auto">
+        <h1><a href="index.html">GREENHOUSE CAFE</a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#specials">Specials</a></li>
+          <li><a class="nav-link scrollto" href="#menu">Menu</a></li>
+          <li><a class="nav-link scrollto" href="#events">Events</a></li>
+          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="#chefs">Chefs</a></li>
+          <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- .navbar -->
+
+      <a href="#book-a-table" class="book-a-table-btn scrollto">Book a table</a>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Home Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <!-- slide main container -->
+        <div class="carousel-inner" role="listbox">
+          <!-- Slides -->
+          {% for slide in slides %}
+          <div class="carousel-item active" style="background-image: url('{{slide.bg.url}}')">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">
+                  {{slide.title}}
+                </h2>
+                <p class="animate__animated animate__fadeInUp">
+                  {{slide.description}}
+                </p>
+                <div>
+                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+
+        <!-- slide buttons prev and nxt -->
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- End Home -->
+
+  <!-- ======= Specials Section ======= -->
+  <section id="specials" class="specials">
+    <div class="container">
+      <div class="section-title">
+        <h2>Check out our <span>Specials</span></h2>
+        <!-- <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p> -->
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3">
+          <ul class="nav nav-tabs flex-column">
+            <li class="nav-item">
+              <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Clouds of Delight!</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Rosemary Rhapsody!</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-9 mt-4 mt-lg-0">
+          <div class="tab-content">
+            <div class="tab-pane active show" id="tab-1">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Marshed potatoes with steak</h3>
+                  <p class="fst-italic">
+                    Indulge in pure comfort with our exquisite special which
+                    is mashed potatoes and steak serverd chopped lettuce, a
+                    bowl of carrote, green, yellow and red pepper all cut in
+                    different shapes
+                  </p>
+                  <p>
+                    Buttery Bliss Mashed Potatoes perfectly paired with
+                    succulent Steak Sensation! A symphony of flavors that will
+                    elevate your taste buds to new heights. Savor the
+                    extraordinary – it's not just a meal, it's a culinary love
+                    affair!
+                  </p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{% static 'img/special1.jpg' %}" alt="" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab-2">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3></h3>
+                  <p class="fst-italic">
+                    Elevate Your Palate with Today's Special – a Symphony of
+                    Succulent Rosemary-Infused Chicken! A Culinary Journey
+                    That Promises to Delight Every Bite. Don't Miss Out on
+                    This Limited-time Gastronomic Harmony!
+                  </p>
+                  <p>
+                    Picture the perfect harmony of tender chicken infused with
+                    the aromatic essence of rosemary, creating a sensation
+                    that dances on your taste buds. This limited-time special
+                    is more than just a meal; it's a celebration of flavors, a
+                    rendezvous with culinary excellence.
+                  </p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{% static 'img/special2.jpg' %}" alt="" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Specials Section -->
+
+  <!-- ======= Menu Section ======= -->
+  <section id="menu" class="menu">
+    <div class="container">
+      <div class="section-title">
+        <h2>Check our tasty <span>Menu</span></h2>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul id="menu-flters">
+            <li data-filter="*" class="filter-active">Show All</li>
+            <li data-filter=".filter-breakfast">Breakfast</li>
+            <li data-filter=".filter-starters">Steak</li>
+            <li data-filter=".filter-salads">Salads</li>
+            <li data-filter=".filter-specialty">Specialty</li>
+            <li data-filter=".filter-beer">Beer</li>
+            <li data-filter=".filter-wine">Wine & coffee</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row menu-container">
+        <div class="col-lg-6 menu-item filter-starters">
+          <div class="menu-content">
+            <a href="#">T-bone Steak </a><span>Mwk 9500.00</span>
+          </div>
+          <div class="menu-ingredients">served with chips and wedges</div>
+        </div>
+
+        <div class="col-lg-6 menu-item filter-specialty">
+          <div class="menu-content">
+            <a href="#">Rump Steak</a><span>Mwk 9000.00</span>
+          </div>
+          <div class="menu-ingredients">served with chips and wedges</div>
+        </div>
+
+        <div class="col-lg-6 menu-item filter-starters">
+          <div class="menu-content">
+            <a href="#">Fillet Steak</a><span>Mwk 12000.00</span>
+          </div>
+          <div class="menu-ingredients">served with chips and wedges</div>
+        </div>
+
+        <div class="col-lg-6 menu-item filter-specialty">
+          <div class="menu-content">
+            <a href="#">Beef/Chicken Burger</a><span>Mwk 9500.00</span>
+          </div>
+          <div class="menu-ingredients">served with chips and wedges</div>
+        </div>
+
+        <div class="col-lg-6 menu-item filter-salads">
+          <div class="menu-content">
+            <a href="#">Beef/Chicken Salad</a><span>Mwk 8500.00</span>
+          </div>
+          <div class="menu-ingredients">
+            Served with sliced pear & grapes, onion rings, chopped lettuce
+          </div>
+        </div>
+        <div class="col-lg-6 menu-item filter-specialty">
+          <div class="menu-content">
+            <a href="#">Chicken Wrap</a><span>Mwk 8500.00</span>
+          </div>
+          <div class="menu-ingredients">Chips is bought pre request</div>
+        </div>
+        <div class="col-lg-6 menu-item filter-starters">
+          <div class="menu-content">
+            <a href="#">Pork piece</a><span>Mwk 6500.00</span>
+          </div>
+          <div class="menu-ingredients">
+            with chopped lettuce, pear, cucumber all these are sliced and
+            mixed together
+          </div>
+        </div>
+        <div class="col-lg-6 menu-item filter-breakfast">
+          <div class="menu-content">
+            <a href="#">Sausage, beacon and eggs</a><span>Mwk 7000.00</span>
+          </div>
+          <div class="menu-ingredients">
+            served with 2 ring tomatoes, eggs are dropped, yellow pepper,
+            baked beans
+          </div>
+        </div>
+        <div class="col-lg-6 menu-item filter-wine">
+          <div class="menu-content">
+            <a href="#">Stony Brooks Vineyards</a><span>Mwk 3500.00</span>
+          </div>
+          <div class="menu-ingredients">The max</div>
+        </div>
+        <div class="col-lg-6 menu-item filter-wine">
+          <div class="menu-content">
+            <a href="#">Coffee & cuppuccino</a><span>Mwk 2000.00</span>
+          </div>
+          <div class="menu-ingredients">
+            well decorated with a love symbol
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Menu Section -->
+
+  <!-- ======= Events Section ======= -->
+  <section id="events" class="events">
+    <div class="container">
+      <div class="section-title">
+        <h2>Organize Your <span>Special Events</span> at our Cafe</h2>
+      </div>
+
+      <div class="events-slider swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="row event-item">
+              <div class="col-lg-6">
+                <img src="{% static 'img/sandra.jpg' %}" class="img-fluid" alt="" />
+              </div>
+              <div class="col-lg-6 pt-4 pt-lg-0 content">
+                <h3>Birthday Parties</h3>
+                <div class="price">
+                  <p><span>$560</span></p>
+                </div>
+                <p class="fst-italic">
+                  At Greenhouse Cafe, we don't just host events; we cultivate
+                  unforgettable memories! Whether it's a whimsical birthday
+                  celebration for your little ones or a sophisticated soirée
+                  for adults, our venue is the perfect canvas for joyous
+                  occasions. Our team is dedicated to creating an enchanting
+                  atmosphere, crafting delectable menus to suit every palate,
+                  and ensuring your special day is nothing short of magical.
+                  Let us sprinkle a touch of Greenhouse charm on your next
+                  birthday bash, where laughter blooms, and happiness grows
+                  with every celebration!
+                </p>
+                <p>
+                  If inneed of sourcing out extras that you'd want to apart of
+                  your birthday will do out source and you the price is
+                  adjusted but if the customer does it price remains the same
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="row event-item">
+              <div class="col-lg-6">
+                <img src="{% static 'img/op.jpg' %}" class="img-fluid" alt="" />
+              </div>
+              <div class="col-lg-6 pt-4 pt-lg-0 content">
+                <h3>Private Parties</h3>
+                <div class="price">
+                  <p><span>$290</span></p>
+                </div>
+                <p class="fst-italic">
+                  Embrace the charm of exclusivity at Greenhouse Cafe, where
+                  celebrations come to life in a blooming paradise. Our lush
+                  surroundings and personalized service provide the perfect
+                  backdrop for your private parties. Let us cultivate
+                  unforgettable moments for you and your guests, ensuring a
+                  truly extraordinary experience. Whether it's an intimate
+                  gathering or a lively celebration, our Greenhouse is your
+                  canvas for crafting memories that will blossom forever. Book
+                  your private affair with us and let the festivities flourish
+                  in the heart of our green oasis!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="row event-item">
+              <div class="col-lg-6">
+                <img src="{% static 'img/event-custom.jpg' %}" class="img-fluid" alt="" />
+              </div>
+              <div class="col-lg-6 pt-4 pt-lg-0 content">
+                <h3>Custom Parties</h3>
+                <div class="price">
+                  <p><span>$99</span></p>
+                </div>
+                <p class="fst-italic">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua.
+                </p>
+                <ul>
+                  <li>
+                    <i class="bi bi-check-circle"></i> Ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle"></i> Duis aute irure dolor
+                    in reprehenderit in voluptate velit.
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle"></i> Ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.
+                  </li>
+                </ul>
+                <p>
+                  Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  Duis aute irure dolor in reprehenderit in voluptate velit
+                  esse cillum dolore eu fugiat nulla pariatur
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End testimonial item -->
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+  <!-- End Events Section -->
+
+  <!-- ======= Book A Table Section ======= -->
+  <section id="book-a-table" class="book-a-table">
+    <div class="container">
+      <div class="section-title">
+        <h2>Book a <span>Table</span></h2>
+        <p>
+          Reserve Your Seat in the Green Symphony: Where Culinary Dreams
+          Blossom and Every Table is a Front Row Experience!
+        </p>
+      </div>
+
+      <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 form-group">
+            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4"
+              data-msg="Please enter at least 4 chars" />
+            <div class="validate"></div>
+          </div>
+          <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email"
+              data-msg="Please enter a valid email" />
+            <div class="validate"></div>
+          </div>
+          <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+            <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone"
+              data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+            <div class="validate"></div>
+          </div>
+          <div class="col-lg-4 col-md-6 form-group mt-3">
+            <input type="text" name="date" class="form-control" id="date" placeholder="Date" data-rule="minlen:4"
+              data-msg="Please enter at least 4 chars" />
+            <div class="validate"></div>
+          </div>
+          <div class="col-lg-4 col-md-6 form-group mt-3">
+            <input type="text" class="form-control" name="time" id="time" placeholder="Time" data-rule="minlen:4"
+              data-msg="Please enter at least 4 chars" />
+            <div class="validate"></div>
+          </div>
+          <div class="col-lg-4 col-md-6 form-group mt-3">
+            <input type="number" class="form-control" name="people" id="people" placeholder="# of people"
+              data-rule="minlen:1" data-msg="Please enter at least 1 chars" />
+            <div class="validate"></div>
+          </div>
+        </div>
+        <div class="form-group mt-3">
+          <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+          <div class="validate"></div>
+        </div>
+        <div class="mb-3">
+          <div class="loading">Loading</div>
+          <div class="error-message"></div>
+          <div class="sent-message">
+            Your booking request was sent. We will call back or send an Email
+            to confirm your reservation. Thank you!
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="submit">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- End Book A Table Section -->
+
+  <!-- ======= Gallery Section ======= -->
+  <section id="gallery" class="gallery">
+    <div class="container-fluid">
+      <div class="section-title">
+        <h2>Some photos from <span>GreenHouse cafe</span></h2>
+        <p>
+          This section will give a few highlights on how amazing our
+          environment is and will also show you the happiness and
+          satisification GreenHouse brings to our customers.
+        </p>
+      </div>
+
+      <div class="row g-0">
+        <!-- start of pics -->
+        {% for pic in gallery %}
+        <div class="col-lg-3 col-md-4">
+          <div class="gallery-item">
+            <a href="{{pic.pic.url}}" class="gallery-lightbox">
+              <img src="{{pic.pic.url}}" alt="" class="img-fluid" />
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+
+        <!-- END OF PICS -->
+      </div>
+    </div>
+  </section>
+  <!-- End Gallery Section -->
+
+  <!-- ======= Chefs Section ======= -->
+  <section id="chefs" class="chefs">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Proffesional <span>Chefs and waiters</span></h2>
+        <p>
+          "Serving up a Symphony of Flavor, our Chefs and Waiters are the
+          Maestros of Culinary Delight in our Greenhouse Oasis – Where Every
+          Plate Tells a Tale of Taste!"
+        </p>
+      </div>
+
+      <div class="row">
+        <!-- START OF WAITER PICS AND CHEFS -->
+        {% for member in staff %}
+        <div class="col-lg-4 col-md-6">
+          <div class="member">
+            <div class="pic">
+              <img src="{{member.pic.url}}" class="img-fluid" alt="" />
+            </div>
+            <div class="member-info">
+              <h4 style="text-transform: capitalize;">{{member.first_name}} {{member.last_name}}</h4>
+              <span style="text-transform: capitalize;">{{member.position}}</span>
+              <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        <!-- END OF CHEFS AND WAITETR PICS -->
+      </div>
+    </div>
+  </section>
+  <!-- End Chefs Section -->
+
+  <!-- ======= Testimonials Section ======= -->
+  <section id="testimonials" class="testimonials">
+    <div class="container position-relative">
+      <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="{% static 'img/Rehema.jpg'%}" class="testimonial-img" alt="" />
+              <h3>Rehema M'bang'ombe</h3>
+              <h4>Ceo &amp; Founder</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Rehema is the founder and CEO of GreenHouse cafe, she came up
+                with the idea because she is a big fan of cooking and many
+                that deals with kitchen. <br />
+                She normally says "do what you love most for you to
+                successed".
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+          <!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="{% static 'img/itguy.jpg'%}" class="testimonial-img
+                alt="">
+                <h3>Timothy Msiska</h3>
+                <h4>IT manager</h4>
+                <div class=" stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Timothy also known as Zikani is the IT manager of GreenHouse
+              cafe and the developer of this website. He normally says "Come
+              satsify your taste bites GreenHouse burgers".
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+        </div>
+        <!-- End testimonial item -->
+
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="{% static 'img/tk.jpg'%}" class="testimonial-img" alt="" />
+            <h3>Takondwa M'bang'ombe</h3>
+            <h4>Master chef</h4>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Takondwa is the son of GreenHouse founder and CEO and also was
+              given this position because of the passion he has in cooking.
+              Takondwa normally known as Tkay wakes up at in the AMs just
+              for him to cook and try new recipes just to satsify our
+              customers during the next day of working.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+        </div>
+        <!-- End testimonial item -->
+
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="{% static 'img/zika.jpg'%}" class="testimonial-img" alt="" />
+            <h3>Timothy Msiska</h3>
+            <h4>Marketer</h4>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua
+              veniam tempor noster veniam enim culpa labore duis sunt culpa
+              nulla illum cillum fugiat legam esse veniam culpa fore nisi
+              cillum quid.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+        </div>
+        <!-- End testimonial item -->
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    </div>
+  </section>
+  <!-- End Testimonials Section -->
+
+  <!-- ======= Whu Us Section ======= -->
+  <section id="why-us" class="why-us">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why choose <span>GreenHouse Cafe</span></h2>
+        <!-- <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p> -->
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="box">
+            <span>1</span>
+            <h4>Culinary Excellence</h4>
+            <p>
+              Freshness and Quality. We prioritize locally sourced, fresh
+              ingredients, ensuring every dish bursts with flavor and quality.
+              Our commitment to culinary excellence shines through each bite.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mt-4 mt-lg-0">
+          <div class="box">
+            <span>2</span>
+            <h4>Ambiance and Experience</h4>
+            <p>
+              From peaceful mornings to intimate evenings, our cafe provides a
+              calm and cozy environment. The gentle lighting, abundant
+              greenery, and inviting atmosphere create the perfect backdrop
+              for creating lasting memories.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mt-4 mt-lg-0">
+          <div class="box">
+            <span>3</span>
+            <h4>Customer Satisfaction</h4>
+            <p>
+              Delivering outstanding service and catering to customers'
+              desires, whether it involves offering a peaceful environment for
+              a morning coffee or arranging a romantic setting for couples'
+              evenings and so as friends and family.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Whu Us Section -->
+
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- video -->
+          <div class="col-lg-5 align-items-stretch video-box" style="background-image: url('img/zikani.jpg')">
+            <a href="{% static 'img/video1.mp4' %}" class="venobox play-btn mb-4" data-vbtype="video"
+              data-autoplay="true"></a>
+          </div>
+          <!-- end video  -->
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
+            <div class="content">
+              <div class="carousel-content">
+                <h3 class="animate__animated animate__fadeInDown">
+                  About <strong><span>GreenHouse</span></strong>
+                </h3>
+              </div>
+              <p>
+                Established in 2023, Greenhouse has been a labor of love from
+                the very beginning. It all started with a shared passion for
+                exceptional coffee and a belief that the perfect cup could
+                bring joy to anyone's day.
+              </p>
+              <p class="fst-italic">
+                Our founder, <b>Rehema M'bang'ombe</b> embarked on a quest to
+                source the finest coffee beans from around the world and
+                create an oasis for coffee enthusiasts.
+              </p>
+              <ul>
+                <li>
+                  <i class="bx bx-check-double"></i> Culinary Excellence:
+                  Striving for exceptional food quality using locally sourced,
+                  fresh ingredients and expert culinary techniques, ensuring a
+                  delightful taste in every dish..
+                </li>
+                <li>
+                  <i class="bx bx-check-double"></i> Ambiance and Experience:
+                  Creating a welcoming, serene, and intimate atmosphere where
+                  guests can relax, unwind, and enjoy a memorable dining
+                  experience, especially during night dates, with attention to
+                  lighting, decor, and overall ambiance..
+                </li>
+                <li>
+                  <i class="bx bx-check-double"></i> Customer Satisfaction:
+                  Ensuring exceptional service and attentiveness to customers'
+                  needs, whether it's providing a tranquil space for a morning
+                  coffee or curating a romantic evening setting for couples.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End About Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2><span>Contact</span> Us</h2>
+          <p>
+            Got a question, a suggestion, or just want to share your love for
+            coffee? We'd love to hear from you! Drop us a message, and we'll
+            get back to you faster than you can say "double shot espresso."
+          </p>
+        </div>
+      </div>
+
+      <div class="map">
+        <iframe style="border: 0; width: 100%; height: 350px"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+          frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="container mt-5">
+        <div class="info-wrap">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 info">
+              <i class="bi bi-geo-alt"></i>
+              <h4>Location:</h4>
+              <p>Njewa along Mchinji road<br />Lilongwe, Malawi, Africa</p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+              <i class="bi bi-clock"></i>
+              <h4>Open Hours:</h4>
+              <p>Monday-Sunday:<br />9:00 AM - 17:00 PM</p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+              <i class="bi bi-envelope"></i>
+              <h4>Email:</h4>
+              <p>greenhouse@gmail.com<br />msiskazikani@gmail.com</p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+              <i class="bi bi-phone"></i>
+              <h4>Call:</h4>
+              <p>
+                +265 999 02 22 22 <br />
+                +265 882 76 17 79
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required />
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required />
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required />
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+          </div>
+          <div class="my-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">
+              Your message has been sent. Thank you!
+            </div>
+          </div>
+          <div class="text-center">
+            <button type="submit">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- End Contact Section -->
+  </main>
+  <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>GreenHous Cafe</h3>
+      <p>
+        "Growing Gratitude, Blooming Thanks, Where Every Visit Leaves a
+        Lasting Greenhouse Memory"
+      </p>
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>GreenHouse Cafe</span></strong>. All Rights Reserved
+      </div>
+      <!-- <div class="credits">Developed by Timothy Msiska</div> -->
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src=" {% static 'js/main.js' %}"></script>
+</body>
+
+</html>

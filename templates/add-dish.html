@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Dish</title>
+    <link rel="stylesheet" href="assets/css/dash-admin.css">
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <img src="images/zikani.jpg" width="250" height="200" alt="">
+
+        <a href="dashboard.php">Home</a>
+        <a href="manageOrders.php">Manage order </a>
+        <a href="checkPayment.php">Check payment</a>
+        <a href="includes/logout.php">Log out</a><br>
+
+    </div>
+
+    <div class="content">
+        <h1>Admin Dashboard</h1>
+        <!-- Add the search form -->
+        <form method="get" action="">
+            <label for="search">Search:</label>
+            <input type="text" id="search" name="search" placeholder="">
+        </form>
+        <br>
+
+
+        <h2>Add Dish</h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            <label for="dish_name">Dish Name:</label><br>
+            <input type="text" id="dish_name" name="dish_name"><br><br>
+
+            <label for="dish_description">Description:</label><br>
+            <textarea id="dish_description" name="dish_description"></textarea><br><br>
+
+            <label for="dish_price">Price:</label><br>
+            <input type="text" id="dish_price" name="dish_price"><br><br>
+
+            <label for="dish_price">Image:</label><br>
+            <input type="file" id="dish_image" name="dish_image"><br><br>
+
+            <input type="submit" value="Add Dish" name="add-dish">
+        </form>
+
+
+</body>
+
+</html>

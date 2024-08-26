@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin dashboard</title>
+    <link rel="stylesheet" href="assets/css/dash-admin.css">
+</head>
+
+<body>
+
+    <div class="content">
+        <h1>Admin Dashboard</h1>
+        <!-- Add the search form -->
+        <form method="get" action="">
+            <label for="search">Search:</label>
+            <input type="text" id="search" name="search" placeholder="">
+        </form><br>
+
+
+    </div>
+
+    <div class="sidenav">
+        <img src="images/zikani.jpg" width="250" height="200" alt="">
+        <div>
+
+            <a href="add-dish.html" onclick="showMenuTab()">Add Menu</a><br>
+            <a href="add-picture.html" onclick="showPicturesTab()">Add Pictures</a><br>
+            <a href="add-event.html" onclick="showEventsTab()">Add Events</a><br>
+            <a href="add-chefs.html" onclick="showChefsTab()">Add Chefs</a><br>
+            <a href="#" onclick="showMessagesTab()">View Messages</a>
+
+        </div>
+
+    </div>
+    
+  <section id="menuTab">
+    <!-- Add Menu Form -->
+    <h2>Add Menu</h2>
+    <!-- Your form elements go here -->
+  </section>
+
+  <section id="picturesTab" style="display:none;">
+    <!-- Add Pictures Form -->
+    <h2>Add Pictures</h2>
+    <!-- Your form elements go here -->
+  </section>
+
+  <section id="eventsTab" style="display:none;">
+    <!-- Add Events Form -->
+    <h2>Add Events</h2>
+    <!-- Your form elements go here -->
+  </section>
+
+  <section id="chefsTab" style="display:none;">
+    <!-- Add Chefs Form -->
+    <h2>Add Chefs</h2>
+    <!-- Your form elements go here -->
+  </section>
+
+  <section id="messagesTab" style="display:none;">
+    <!-- View Messages -->
+    <h2>Booked Tables</h2>
+    <!-- Display booked tables/messages here -->
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Greenhouse Cafe</p>
+  </footer>
+
+  <script>
+    function showMenuTab() {
+      hideAllTabs();
+      document.getElementById("menuTab").style.display = "block";
+    }
+
+    function showPicturesTab() {
+      hideAllTabs();
+      document.getElementById("picturesTab").style.display = "block";
+    }
+
+    function showEventsTab() {
+      hideAllTabs();
+      document.getElementById("eventsTab").style.display = "block";
+    }
+
+    function showChefsTab() {
+      hideAllTabs();
+      document.getElementById("chefsTab").style.display = "block";
+    }
+
+    function showMessagesTab() {
+      hideAllTabs();
+      document.getElementById("messagesTab").style.display = "block";
+    }
+
+    function hideAllTabs() {
+      document.getElementById("menuTab").style.display = "none";
+      document.getElementById("picturesTab").style.display = "none";
+      document.getElementById("eventsTab").style.display = "none";
+      document.getElementById("chefsTab").style.display = "none";
+      document.getElementById("messagesTab").style.display = "none";
+    }
+  </script>
+
+</body>
+
+</html>
