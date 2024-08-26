@@ -5,6 +5,8 @@ from django.db import models
 class Events(models.Model):
     event_name=models.CharField(max_length=50)
     event_price=models.CharField(max_length=15)
+    event_description=models.CharField(max_length=1024, blank=True)
+    event_img=models.ImageField(default='img.png')
 
 class Menu(models.Model):
     menu_name=models.CharField(max_length=100)
@@ -36,5 +38,14 @@ class Chef(models.Model):
 
 class HeroSlide(models.Model):
     title=models.CharField(max_length=255)
-    description=models.CharField(max_length=2000)
+    description=models.CharField(max_length=2000,  blank=True)
     bg=models.ImageField()
+
+class About(models.Model):
+    description=models.CharField(max_length=1024, blank=True)
+
+class Special(models.Model):
+    title=models.CharField(max_length=250)
+    food_name=models.CharField(max_length=255)
+    description=models.CharField(max_length=1024, blank=True)
+    pic=models.ImageField(default='img.png')
