@@ -1,6 +1,6 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse
-from .models import Gallery,Chef,Waiter,HeroSlide
+from .models import Gallery,Chef,Waiter,HeroSlide,Events,Special,About
 import random
 
 rand=random.random()*10
@@ -16,10 +16,19 @@ def index(request):
 
     hero_section_slides=HeroSlide.objects.all()
 
+    event=list(Events.object.all())
+
+    specials=list(Special.objects.all())
+
+    about=list(About.objects.all())
+
     context={
         "staff":chefs_and_waiters,
         "gallery":gallery,
-        "slides":hero_section_slides
+        "slides":hero_section_slides,
+        "events":event,
+        "special":specials,
+        "about us":about
     }
     return render(request,"index.html",context)
 
