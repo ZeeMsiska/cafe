@@ -49,15 +49,18 @@ class About(models.Model):
 
 class Special(models.Model):
     title=models.CharField(max_length=250)
+    second_title=models.CharField(max_length=250, default=True)
     food_name=models.CharField(max_length=255)
     description=models.CharField(max_length=1024, blank=True)
-    pic=models.ImageField(default='img.png')
+    description1=models.CharField(max_length=1024, blank=True)
+    pic=models.ImageField(default='img.jpg')
+    second_pic=models.ImageField(default='img.jpg')
 
 class Contact(models.Model):
     location=models.CharField(max_length=1024)
     opening_hours=models.TimeField()
     email=models.EmailField(max_length=254)
-    phone=models.IntegerField(max_length=13)
+    phone=models.IntegerField()
 
     def __str__(self):
         return f"Location: {self.location}, opening_hours:{self.opening_hours.strftime('%H')}, email:{self.email}"
