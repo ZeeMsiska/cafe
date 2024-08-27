@@ -16,7 +16,7 @@ def index(request):
 
     hero_section_slides=HeroSlide.objects.all()
 
-    event=list(Events.object.all())
+    event=list(Events.objects.all())
 
     specials=list(Special.objects.all())
 
